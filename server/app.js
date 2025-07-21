@@ -1,0 +1,22 @@
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const jsonRoutes = require("./routes/json.routes");
+const base64Routes = require("./routes/base64.routes");
+
+const app = express();
+// app.use(cors());
+app.use(bodyParser.json());
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
+
+app.use("/api/json", jsonRoutes);
+app.use("/api/base64", base64Routes);
+
+module.exports = app;
