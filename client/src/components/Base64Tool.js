@@ -7,6 +7,8 @@ const Base64Tool = () => {
   const [mode, setMode] = useState("encode");
   const [copied, setCopied] = useState(false);
 
+  const backendurl = process.env.REACT_APP_BACKEND_URL;
+
   const handleConvert = async () => {
     const endpoint = mode === "encode" ? "encode" : "decode";
     try {
