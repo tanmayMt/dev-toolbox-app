@@ -3,10 +3,13 @@ import axios from "axios";
 
 const JsonHistory = () => {
   const [entries, setEntries] = useState([]);
+  
+  // const backendurl= process.env.REACT_APP_API_URL;
+  // console.log("REACT_APP_BACKEND_URL:", backendurl);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/json/history")
+      .get(`http://localhost:8080/api/json/history`)
       .then((res) => setEntries(res.data.data))
       .catch(() => alert("⚠️ Failed to load history"));
   }, []);
@@ -49,3 +52,4 @@ const JsonHistory = () => {
 };
 
 export default JsonHistory;
+
