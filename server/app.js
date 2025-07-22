@@ -10,7 +10,8 @@ const app = express();
 app.use(bodyParser.json());
 
 const corsOptions = {
-  origin: `http://localhost:3000`,
+  //origin: `http://localhost:3000`,
+  origin: `https://dev-toolbox-beige.vercel.app/`,
   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
   credentials: true,
 };
@@ -25,4 +26,3 @@ app.use("/api/json", jsonRoutes);
 app.use("/api/base64", base64Routes);
 
 module.exports = app;
-
