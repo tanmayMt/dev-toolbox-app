@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 const corsOptions = {
   //origin: `http://localhost:3000`,
-  origin: `https://dev-toolbox-beige.vercel.app/`,
+  origin: `https://dev-toolbox-beige.vercel.app`,
   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
   credentials: true,
 };
