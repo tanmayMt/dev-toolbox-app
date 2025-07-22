@@ -2,7 +2,7 @@ const app = require("./app");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.REACT_APP_BACKEND_PORT || 8080;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/devtoolbox";
 
 mongoose.connect(MONGO_URI, {
