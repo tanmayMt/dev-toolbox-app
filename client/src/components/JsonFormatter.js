@@ -6,9 +6,11 @@ const JsonFormatter = () => {
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
 
+  const backendurl = process.env.REACT_APP_BACKEND_URL;
+
   const formatJson = async () => {
     try {
-      const res = await axios.post("http://localhost:8080/api/json/format", {
+      const res = await axios.post(`http://localhost:8080/api/json/format`, {
         jsonText: input,
       });
       setOutput(res.data.formatted);
